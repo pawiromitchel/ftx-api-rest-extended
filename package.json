@@ -1,0 +1,27 @@
+{
+  "name": "ftx-api-rest-extended",
+  "version": "1.0.0",
+  "description": "An extended wrapper of the FTX API package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawiromitchel/ftx-api-rest-extended.git"
+  },
+  "keywords": [
+    "wrapper",
+    "api",
+    "ftx"
+  ],
+  "author": "Mitchel Pawirodinomo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pawiromitchel/ftx-api-rest-extended/issues"
+  },
+  "homepage": "https://github.com/pawiromitchel/ftx-api-rest-extended#readme",
+  "dependencies": {
+    "ftx-api-rest": "^0.0.7"
+  }
+}
