@@ -16,11 +16,10 @@ class FTXService {
                 path: '/account'
             })
             let res = await req;
-            return await res;
+            return await res.result;
         } catch (e) {
             console.error(`Something went wrong ${e}`);
         }
-
     }
 
     /**
@@ -35,32 +34,15 @@ class FTXService {
                 path: '/markets/' + _pair
             });
             const res = await req;
-            return await res;
+            return await res.result;
         } catch (e) {
             console.error(`Something went wrong ${e}`);
         }
     }
 
     /**
-     * Get the funding rate of a future contract
-     * @param {*} _pair BTC-PERP
-     * @returns 
+     * FOR SPOT ORDERS
      */
-    async fundingRate(_pair) {
-        try {
-            let req = this.FTXConnection.request({
-                method: 'GET',
-                path: '/funding_rates',
-                data: {
-                    future: _pair
-                }
-            });
-            const res = await req;
-            return await res;
-        } catch (e) {
-            console.error(`Something went wrong ${e}`);
-        }
-    }
 
     /**
      * Convert X to Y
@@ -81,7 +63,7 @@ class FTXService {
                 }
             });
             const res = await req;
-            return await res;
+            return await res.result;
         } catch (e) {
             console.error(`Something went wrong ${e}`);
         }
@@ -99,7 +81,7 @@ class FTXService {
                 path: '/otc/quotes/' + _id
             });
             const res = await req;
-            return await res;
+            return await res.result;
         } catch (e) {
             console.error(`Something went wrong ${e}`);
         }
@@ -117,7 +99,32 @@ class FTXService {
                 path: `/otc/quotes/${_id}/accept`
             });
             const res = await req;
-            return await res;
+            return await res.result;
+        } catch (e) {
+            console.error(`Something went wrong ${e}`);
+        }
+    }
+
+    /**
+     * FOR FUTURE CONTRACTS
+     */
+
+    /**
+     * Get the funding rate of a future contract
+     * @param {*} _pair BTC-PERP
+     * @returns 
+     */
+    async fundingRate(_pair) {
+        try {
+            let req = this.FTXConnection.request({
+                method: 'GET',
+                path: '/funding_rates',
+                data: {
+                    future: _pair
+                }
+            });
+            const res = await req;
+            return await res.result;
         } catch (e) {
             console.error(`Something went wrong ${e}`);
         }
