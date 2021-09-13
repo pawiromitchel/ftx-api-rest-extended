@@ -30,7 +30,7 @@ async function test() {
 
 test();
 ```
-There's also a generated JSDoc available: https://pawiromitchel.github.io/ftx-api-rest-extended/docs/FTXService.html
+There's also a generated JSDoc available: https://pawiromitchel.github.io/ftx-api-rest-extended/FTXService.html
 ## Reference
 - [FTX API Docs](https://docs.ftx.com/?javascript#rest-api)
 
