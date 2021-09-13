@@ -4,6 +4,7 @@ An extended version of the [ftx-api-rest](https://github.com/askmike/ftx-api-res
 npm install ftx-api-rest-extended
 ```
 ## Example
+There's also a generated JSDoc available: https://pawiromitchel.github.io/ftx-api-rest-extended/docs/FTXService.html
 ```js
 const FTX = require('ftx-api-rest-extended');
 
