@@ -1,7 +1,7 @@
 # ftx-api-rest-extended
 An extended version of the [ftx-api-rest](https://github.com/askmike/ftx-api-rest) package made by [askmike](https://github.com/askmike/ftx-api-rest), I decided to write specific functions focused on spot / future trading ✨.
 ```bash
-$ npm install ftx-api-rest-extended
+npm install ftx-api-rest-extended
 ```
 ## Example
 ```js
