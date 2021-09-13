@@ -45,13 +45,13 @@ class FTXService {
      */
 
     /**
-     * Convert X to Y
+     * OTC (Over the counter) Convert X to Y
      * @param {string} _from Asset you want to convert
      * @param {string} _to Asset you want to convert to
      * @param {number} _size How much you want to convert
      * @returns 
      */
-    async convert(_from, _to, _size) {
+    async createOTCOrder(_from, _to, _size) {
         try {
             const req = this.FTXConnection.request({
                 method: 'POST',
@@ -63,7 +63,17 @@ class FTXService {
                 }
             });
             const res = await req;
-            return await res.result;
+            const { quoteId } = res.result;
+            if (quoteId) {
+                const infoReq = await this.getQuoteInfo(quoteId);
+                const acceptOrder = await this.acceptQuote(quoteId);
+                const { success } = acceptOrder;
+                if (success) {
+                    return infoReq;
+                } else {
+                    console.error('[x] Did not accept the QuoteID');
+                }
+            }
         } catch (e) {
             console.error(`Something went wrong ${e}`);
         }
@@ -99,7 +109,7 @@ class FTXService {
                 path: `/otc/quotes/${_id}/accept`
             });
             const res = await req;
-            return await res.result;
+            return await res;
         } catch (e) {
             console.error(`Something went wrong ${e}`);
         }

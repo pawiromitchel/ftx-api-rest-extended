@@ -22,7 +22,7 @@ async function test() {
     console.log(`[i] Exchange rate: ${price}`);
 
     // sample of a limit buy order on the ETH-PERP future contract
-    await FTX_INSTANCE.marketOrder('0.005', 'eth-perp', 'buy', 'limit', 3000);\
+    await FTX_INSTANCE.marketOrder('0.005', 'eth-perp', 'buy', 'limit', 3000);
     // close all limit orders
     const closeLimitOrders = await FTX_INSTANCE.closeLimitOrders();
     console.log(closeLimitOrders);
