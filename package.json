@@ -1,6 +1,6 @@
 {
   "name": "ftx-api-rest-extended",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "An extended wrapper of the FTX API package",
   "main": "index.js",
   "scripts": {
